@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set date and time</title>
+</head>
+<body>
+    <h1>Javascript functions</h1>
+    <h2>
+        Given time
+    </h2>
+
+    <p id="demo"></p>
+
+
+    <script>
+        setInterval(mytime, 1000) //it is a callback function
+
+        function mytime(){
+            let d = new Date();
+            document.getElementById("demo").innerHTML = 
+            d.getHours ()  + ":" + 
+            d.getMinutes () + ":"+
+            d.getSeconds () +":"+
+            d.getMilliseconds ();
+          
+        }
+            // return 
+
+    </script>
+</body>
+</html>

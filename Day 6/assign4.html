@@ -1,0 +1,104 @@
+<!-- 
+	Write 6 Function in Script 
+	
+	display 
+	addition 
+	subtraction
+	multiply
+	division 
+	calculate
+	
+	Accept data from user 
+		2 numbers and Which Operation they want to perform
+  according to choice call particular function and display result 
+using callback function concept 
+
+    calculate(n1 , n2 , mcallBack)
+		addition (n1 , n2 , display);
+		
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>assignQ4</title>
+</head>
+<body>
+<h1> Assignment4-Q4</h1>
+<p id="p1" ></p>
+<script>
+ function display(result){
+    document.getElementById("p1").innerHTML="result :"+ result;
+
+ }   
+function multi(a,b,callback){
+    const result= a*b;
+    callback(result);
+}
+
+function add(a,b,callback){
+    const result=a+b;
+    callback(result);
+
+}
+
+function sub(a,b,callback){
+    const result=a-b;
+    callback(result);
+}
+
+function division(a,b,callback){
+    if(b==0){
+    callback("division by 0");
+    }
+    else{
+    const result=a/b;
+    
+    callback(result);
+}
+}
+
+function calculate(a, b, operationCallback) {
+    operationCallback(a, b, display);
+}
+
+function userInput(){
+const a= parseFloat(prompt("enter the value of A :"));
+const b=parseFloat(prompt("enter the value of B :"));
+
+if(isNaN (a)|| isNaN (b)){
+    alert("enter input");
+    return;
+}
+
+const operation=prompt("enter operation : mul,add,sub,division").toLowerCase();
+switch(operation){
+    case "mul":
+    calculate(a,b,multi);
+    break;
+
+    case "add":
+    calculate(a,b,add);
+    break;
+
+    case "sub":
+        calculate(a,b,sub);
+    break;
+    case "division":
+        calculate(a,b,division);
+    break;
+    default:
+            alert("Invalid operation!");
+
+}
+}
+
+userInput();
+
+
+</script>
+</body>
+</html>
+
+

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Back function 2</title>
+</head>
+<body>
+    <h1>Call back functoin 2</h1>
+    <p id="p1"></p>
+    <script>
+        const myNo=[3,-9,7,5,-4];
+        const posNo=removeNeg(myNo,(x)=> x>=0);
+        document.getElementById("p1").innerHTML=posNo;
+
+        function removeNeg(myNo,callback){
+            const myArr=[];
+            for (const x of myNo){
+                if(callback(x))
+                myArr.push(x);
+            }
+            return myArr;
+        }
+    </script>
+</body>
+</html>

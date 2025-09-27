@@ -1,0 +1,46 @@
+<!-- create 2 div elements 
+    1 at left top corner and 2 nd at right top corner 
+	and add annimation effect with above call back functions -->
+
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Animation</title>
+    </head>
+    <body>
+
+        <h1 style="text-align: center ; color: rgb(20, 20, 68);">Animation Style</h1>
+        <div id="box1" style="background-color: aqua; height: 50px; width: 50px; position: absolute; left: 0; border-radius: 50%;"></div>
+        <div id="box2" style="background-color: black; height: 50px; width: 50px; position: absolute; right: 0; border-radius: 50%;"></div>
+        
+        <script>
+            let pos = 0;
+            // let id = null;
+            const box1 = document.getElementById("box1");
+            const Box2 = document.getElementById("box2");
+            function myMove(){
+                const id = setInterval(frame, 10);
+            }
+            function frame(){
+                if(pos>=565)
+            {
+                clearInterval("id");
+            }
+            else{
+                pos++;
+                box1.style.top = pos + "px";
+                box1.style.left = pos + "px";
+
+                box2.style.top = pos + "px";
+                box2.style.right = pos + "px";
+            }
+            }
+
+            myMove();
+        </script>
+    
+    </body>
+    </html>

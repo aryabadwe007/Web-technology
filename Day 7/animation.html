@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+</head>
+<body>
+    <div id="d1" style="background-color: aqua; height: 50px; width: 50px; position: absolute;"></div>
+
+    <script>
+
+            let id = null;
+
+            let pos = 0;
+            const ele  = document.getElementById("d1");
+
+        function myMove()
+        {
+            const id = setInterval(frame, 10);
+        }
+
+
+        function frame(){
+            if(pos>=566)
+        {
+            clearInterval(id);
+        }
+
+            else{
+                pos++;
+                ele.style.top = pos + "px";
+                ele.style.left = pos + "px";
+            }
+        }
+
+        window.onload = myMove;
+        
+    </script>
+</body>
+</html>

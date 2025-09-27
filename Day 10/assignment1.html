@@ -1,0 +1,73 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 1</title>
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h2>Ajax with JQuery</h2>
+    <div id="demo"></div>
+    <button id="button">Submit</button>
+
+    <script>
+        $("demo").load("data.txt");
+        $.get("https://jsonplaceholder.typicode.com/posts", callback);
+        $.post("https://jsonplaceholder.typicode.com/posts", data, callback);
+        $("button").click(callback(){
+            $.get("pr.html",callback(data,status){
+            alert("Data:" + data +"\nstatus:"+status);
+        });
+    });
+
+    </script>
+</body>
+</html> -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Assignment 1</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <h2>Ajax with JQuery</h2>
+    <div id="demo"></div>
+    <button id="loadButton">Load pr.html</button>
+
+    <script>
+        // 1. Fix selector to include '#' for ID selector in jQuery
+        $("#demo").load("data.txt");
+
+        // 2. Properly call $.get() and define the callback function
+        $.get("https://jsonplaceholder.typicode.com/posts", function(response) {
+            console.log("GET response:", response);
+        });
+
+        // 3. Properly call $.post() with sample data and callback
+        let postData = {
+            title: "foo",
+            body: "bar",
+            userId: 1
+        };
+
+        $.post("https://jsonplaceholder.typicode.com/posts", postData, function(response) {
+            console.log("POST response:", response);
+        });
+
+        // 4. Attach click handler to button to load pr.html and alert data and status
+        $("#loadButton").click(function() {
+            $.get("pr.html", function(data, status) {
+                alert("Data: " + data + "\nStatus: " + status);
+            });
+        });
+    </script>
+</body>
+</html>

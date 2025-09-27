@@ -1,0 +1,23 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery $.get() Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<button id="getDataBtn">Get Data</button>
+<div id="result"></div>
+
+<script>
+    $("#getDataBtn").click(function() {
+        $.get("data.txt", function(response) {
+            // Display the response text in the div
+            $("#result").html(response);
+        });
+    });
+</script>
+
+</body>
+</html>

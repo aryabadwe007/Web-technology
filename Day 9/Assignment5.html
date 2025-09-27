@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assignment 5</title>
+  <style>
+    pre {
+      white-space: pre-wrap;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+  <h2>Assignment 5</h2>
+  <pre id="demo"></pre>
+
+  <script>
+    function divide(a, b) {
+      try {
+        if (b === 0) {
+          throw new Error("Denominator should not be 0");
+        }
+        let result = a / b;
+        console.log("result", result);
+        document.getElementById("demo").textContent += `Result of ${a} / ${b} = ${result}\n`;
+      } catch (error) {
+        console.log("Caught error", error.message);
+        document.getElementById("demo").textContent += `Error: ${error.message}\n`;
+      } finally {
+        console.log("Division attempt finished");
+        document.getElementById("demo").textContent += "Division attempt finished\n\n";
+      }
+    }
+
+    divide(10, 2);
+    divide(5, 0);
+  </script>
+</body>
+</html>

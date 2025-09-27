@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>jQuery Class Manipulation</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <style>
+    .highlight {
+      background-color: #f51497;
+      border: 2px solid rgb(148, 44, 196);
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>jQuery addClass(), removeClass(), toggleClass()</h2>
+
+  <div id="myBox">This is a box</div><br>
+
+  <button id="addBtn">Add Class</button>
+  <button id="removeBtn">Remove Class</button>
+  <button id="toggleBtn">Toggle Class</button>
+
+  <script>
+    $(document).ready(function () {
+      // Add class
+      $('#addBtn').click(function () {
+        $('#myBox').addClass('highlight');
+      });
+
+      // Remove class
+      $('#removeBtn').click(function () {
+        $('#myBox').removeClass('highlight');
+      });
+
+      // Toggle class
+      $('#toggleBtn').click(function () {
+        $('#myBox').toggleClass('highlight');
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!-- use ajax concept and display data in html page 
+on button click from text file  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <p>Display Data</p>
+         <button onclick="load_text()">Load Text</button>
+        <div id="demo"></div>
+
+        <script>
+            function load_text(){
+                let xml= new XMLHttpRequest();
+            
+            xml.open("GET", "data.txt", true);
+
+            xml.onload = function(){
+                if(this.status === 200){
+                    document.getElementById("demo").innerText = this.responseText;
+                }else{
+                    document.getElementById("demo").innerText = "Failed to load data"; 
+                }
+            };
+
+            xml.onerror = function(){
+                document.getElementById("demo").innerText = "Request Error";
+            
+
+            
+        };
+
+        xml.send();
+    }
+        </script>
+</body>
+</html>
+

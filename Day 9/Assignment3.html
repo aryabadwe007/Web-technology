@@ -1,0 +1,85 @@
+<!-- use HTML predefined Validations 
+     required  , minlength , maxlength 
+    and display error message if data is not properly entered -->
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Assignment 3</title>
+    </head>
+    <body>
+        <p style="text-align: center; font-weight: bold; "><marquee> Username and Email details</marquee></p><br><br>
+        <h1 style="font-weight: bolder ; text-align: center; background-color: aquamarine;">User Registration</h1><br><br>
+        <form id="myform" style="text-align: center;">
+            <label for="username">Username : </label>
+            <input 
+            type="text"
+            id="name"
+            name="username"
+            required
+            minlength="4"
+            maxlength="10"
+            placeholder="Enter username"
+            ><br><br>
+
+            <label for="Email">Email : </label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="Enter email"
+            ><br><br>
+
+            <button style="text-align: center;">Submit</button>
+
+
+            <div id="email Error"></div>
+        </form>
+        <script>
+            const form = document.getElementById("myform");
+
+
+            //clear previous result
+            document.getElementById("username").textContent = " ";
+            document.getElementById("Email").textContent = " ";
+            
+            let valid = true;
+
+            const username = form.username;
+            if(!username.validity.valid){
+                valid = false;
+                if(username.validity.valueMissing){
+                    document.getElementById("usernameError").textContent = "Username is required";
+                } else if (username.validity.tooshort){
+                     document.getElementById('usernameError').textContent = "Username is required";
+
+                }else if(username.validity.toolong){
+                    document.getElementById('usernameError').textContent = "Username is required";
+                }
+            }
+
+            const email = form.email
+            if(!email)
+            {
+                valid = false;
+                if(email.validity.valueMissing){
+                    document.getElementById("emailError").textContent = "Email must be required";
+                    
+                } else if(email.validity.typemismatch)
+                {
+                    document.getElementById("emailError").textContent = "Email must be required";
+
+                }
+            }
+
+            if (valid){
+                alert("Form submitted successfully!");
+                form.reset();
+            }
+        // });
+        </script>
+    </body>
+    </html>
